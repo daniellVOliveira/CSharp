@@ -13,13 +13,11 @@ namespace WebApplication1
         {
             if (!IsPostBack)
             {
-                TextBox1.Text = "teste";
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = TextBox1.Text + " - novo texto";
         }
     }
 }
