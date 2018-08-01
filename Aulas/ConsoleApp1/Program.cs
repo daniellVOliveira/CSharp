@@ -17,16 +17,31 @@ namespace ConsoleApp1
         public static int divisao { get; set; }
 
         static void Main(string[] args)
-        {
+        {          
+
             Console.WriteLine("Digite o primeiro número");
             Num1 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Digite o segundo número");
             Num2 = int.Parse(Console.ReadLine());
-            realizarSoma(Num1, Num2);
-            realizarSubtracao(Num1, Num2);
-            realizarMultiplicacao(Num1, Num2);
-            realizarDivisao(Num1, Num2);
+            Console.WriteLine("Selecione a sua operação");
+            switch(op){
+                case "+":
+                     realizarSoma(Num1, Num2);
+                    break;
+                case "-":
+                     realizarSubtracao(Num1, Num2);
+                    break;
+                case "*":
+                     realizarMultiplicacao(Num1, Num2);
+                    break;
+                case "/":
+                     realizarDivisao(Num1, Num2);
+                    break;
+
+
+           }
+
             Console.ReadKey();
 
         }
