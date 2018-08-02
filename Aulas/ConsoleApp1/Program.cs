@@ -17,7 +17,9 @@ namespace ConsoleApp1
         public static int divisao { get; set; }
 
         static void Main(string[] args)
-        {          
+        {
+
+            String op;
 
             Console.WriteLine("Digite o primeiro número");
             Num1 = int.Parse(Console.ReadLine());
@@ -25,22 +27,25 @@ namespace ConsoleApp1
             Console.WriteLine("Digite o segundo número");
             Num2 = int.Parse(Console.ReadLine());
             Console.WriteLine("Selecione a sua operação");
-            switch(op){
+
+            op = Console.ReadLine();
+            switch (op)
+            {
                 case "+":
-                     realizarSoma(Num1, Num2);
+                    realizarSoma(Num1, Num2);
                     break;
                 case "-":
-                     realizarSubtracao(Num1, Num2);
+                    realizarSubtracao(Num1, Num2);
                     break;
                 case "*":
-                     realizarMultiplicacao(Num1, Num2);
+                    realizarMultiplicacao(Num1, Num2);
                     break;
                 case "/":
-                     realizarDivisao(Num1, Num2);
+                    realizarDivisao(Num1, Num2);
                     break;
-
-
-           }
+                default:
+                    break;
+            }
 
             Console.ReadKey();
 
