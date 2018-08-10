@@ -7,23 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="txtDisplay" HorizontalAlignment="Left" Height="42" Margin="277,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="278"/>
-        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="277,117,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="349,117,0,0" VerticalAlignment="Top" Width="62" Height="57" RenderTransformOrigin="-0.544,3.659"/>
-        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="420,117,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="420,250,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="349,250,0,0" VerticalAlignment="Top" Width="62" Height="57"/>
-        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="277,250,0,0" VerticalAlignment="Top" Width="63" Height="57" RenderTransformOrigin="0.012,2.645" Click="btn1_Click"/>
-        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="420,184,0,0" VerticalAlignment="Top" Width="63" Height="57" RenderTransformOrigin="2.175,1.954"/>
-        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="349,184,0,0" VerticalAlignment="Top" Width="62" Height="57"/>
-        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="277,184,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btnSoma" Content="+" HorizontalAlignment="Left" Margin="277,316,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btnSubtracao" Content="-" HorizontalAlignment="Left" Margin="420,316,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="349,316,0,0" VerticalAlignment="Top" Width="62" Height="57"/>
-        <Button x:Name="btnMultiplicar" Content="*" HorizontalAlignment="Left" Margin="492,117,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btnDivisao" Content="/" HorizontalAlignment="Left" Margin="492,184,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btnRaiz" Content="Raiz" HorizontalAlignment="Left" Margin="492,250,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
-        <Button x:Name="btnMemoria" Content="Memo" HorizontalAlignment="Left" Margin="492,316,0,0" VerticalAlignment="Top" Width="63" Height="57"/>
+        <TextBox x:Name="txtDisplay" HorizontalAlignment="Left" Height="42" Margin="267,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="278"/>
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="267,65,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btn7_Click"/>
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="339,65,0,0" VerticalAlignment="Top" Width="62" Height="57" RenderTransformOrigin="-0.544,3.659" Click="btn8_Click"/>
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="410,65,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btn9_Click"/>
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="410,198,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btn3_Click"/>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="339,198,0,0" VerticalAlignment="Top" Width="62" Height="57" Click="btn2_Click"/>
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="267,198,0,0" VerticalAlignment="Top" Width="63" Height="57" RenderTransformOrigin="0.012,2.645" Click="btn1_Click"/>
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="410,132,0,0" VerticalAlignment="Top" Width="63" Height="57" RenderTransformOrigin="2.175,1.954" Click="btn6_Click"/>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="339,132,0,0" VerticalAlignment="Top" Width="62" Height="57" Click="btn5_Click"/>
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="267,132,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btn4_Click"/>
+        <Button x:Name="btnSoma" Content="+" HorizontalAlignment="Left" Margin="267,264,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnSoma_Click"/>
+        <Button x:Name="btnSubtracao" Content="-" HorizontalAlignment="Left" Margin="410,264,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnSubtracao_Click"/>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="339,264,0,0" VerticalAlignment="Top" Width="62" Height="57" Click="btn0_Click"/>
+        <Button x:Name="btnMultiplicar" Content="*" HorizontalAlignment="Left" Margin="482,65,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnMultiplicar_Click"/>
+        <Button x:Name="btnDivisao" Content="/" HorizontalAlignment="Left" Margin="482,132,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnDivisao_Click"/>
+        <Button x:Name="btnRaiz" Content="Raiz" HorizontalAlignment="Left" Margin="482,198,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnRaiz_Click"/>
+        <Button x:Name="btnIgual" Content="=" HorizontalAlignment="Left" Margin="482,264,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnIgual_Click"/>
+        <Button x:Name="btnVirgula" Content="," HorizontalAlignment="Left" Margin="267,326,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnVirgula_Click"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="482,326,0,0" VerticalAlignment="Top" Width="63" Height="57" Click="btnLimpar_Click"/>
 
     </Grid>
 </Window>
