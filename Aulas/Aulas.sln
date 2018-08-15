@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula0708_WPF", "Aula0708_WP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula0708_CALC", "Aula0708_CALC\Aula0708_CALC.csproj", "{890C9DE9-77F7-4EEE-8F3C-FEC55E15113F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula1408_EntityFramework1", "Aula1408_EntityFramework1\Aula1408_EntityFramework1.csproj", "{41C9C876-102F-4795-BE53-2DAD3F9A69FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{890C9DE9-77F7-4EEE-8F3C-FEC55E15113F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{890C9DE9-77F7-4EEE-8F3C-FEC55E15113F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{890C9DE9-77F7-4EEE-8F3C-FEC55E15113F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C9C876-102F-4795-BE53-2DAD3F9A69FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C9C876-102F-4795-BE53-2DAD3F9A69FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C9C876-102F-4795-BE53-2DAD3F9A69FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C9C876-102F-4795-BE53-2DAD3F9A69FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
