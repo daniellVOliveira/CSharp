@@ -20,7 +20,7 @@ namespace Aula1408_EntityFramework1
           Banco de Dados, já que não será necessário escrever todo o código SQL.
           
         Instalando o Entity Framework
-          *
+          * 
           * 
           * 
          */
