@@ -20,8 +20,12 @@ namespace Aula1408_EntityFramework1
           Banco de Dados, já que não será necessário escrever todo o código SQL.
           
         Instalando o Entity Framework
+          * Botão Direito no Projeto > Gerenciar Pacotes NuGet
+          * Localizar o Entity Framework
+          * Fazer a Instalação e o Download
           * 
-          * 
+          * Criando Base (Abordagem: Model First)
+          * Associação significa o relacionamento entre tabelas
           * 
          */
     }
