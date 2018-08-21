@@ -10,22 +10,20 @@ namespace Alura_Aula02
     {
         static void Main(string[] args)
         {
-            ContaCorrente primeiraContaCorrente = new ContaCorrente();
-            primeiraContaCorrente.saldo += 200;
-            Console.WriteLine(primeiraContaCorrente.saldo);
-        
-            primeiraContaCorrente.saldo += 100;
-            Console.WriteLine(primeiraContaCorrente.saldo);
-            
-            ContaCorrente segundaContaCorrente = new ContaCorrente();
-            segundaContaCorrente.saldo = 50;
+            ContaCorrente conta1 = new ContaCorrente();
+            ContaCorrente conta2 = new ContaCorrente();
 
-            Console.WriteLine(primeiraContaCorrente.saldo);
-            Console.WriteLine(segundaContaCorrente.saldo);
+            conta1.Depositar(100);
+
+            Console.WriteLine("Saldo da conta 1:" + conta1.saldo);
+
+
+            conta1.Tranferir(100, conta2);
+
+            Console.WriteLine("Saldo da conta 1:" + conta1.saldo);
+            Console.WriteLine("Saldo da conta 2:" + conta2.saldo);
 
             Console.ReadLine();
-
-
         }
     }
 }
