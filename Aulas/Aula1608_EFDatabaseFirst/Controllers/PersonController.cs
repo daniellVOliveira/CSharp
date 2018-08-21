@@ -38,5 +38,36 @@ namespace Aula1608_EFDatabaseFirst.Controllers
             }
         }
 
+        void Editar(int id, Person novoDadosPerson)
+        {
+            Person personAntigo = BuscarPorId(id);
+
+            if (personAntigo != null)
+            {
+                personAntigo.FirstName = novoDadosPerson.FirstName;
+                personAntigo.LastName = novoDadosPerson.LastName;
+                personAntigo.Title = novoDadosPerson.Title;
+
+                AdventureWorks2016Entities contexto = new AdventureWorks2016Entities();
+
+                contexto.Entry(personAntigo).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();
+            }
+        }
+
+        List<Person> PesquisarPorFirstName(string firstName)
+        {
+            AdventureWorks2016Entities contexto = new AdventureWorks2016Entities();
+
+            //LINQ
+            // var lista = from p in contexto.Person
+            //select p; //SELECT * FROM Person
+
+            var lista = from p in contexto.Person
+                        where p.FirstName == firstName
+                        select p;
+
+            return lista.ToList();
+        }
     }
 }
