@@ -13,9 +13,13 @@ namespace Aula2108_CodeFirst.Modelos
         [Key] //Usado quando não é utilizado nenhuma nomenclatura reconhecida pelo Entity
         public int CategoriaID { get; set; }
 
+        [Required]
+        [StringLength(30)]
         public string Nome { get; set; }
 
         public string Descricao { get; set; }
+
+        public virtual ICollection<Produto> _Produtos { get; set; }
 
 
     }
