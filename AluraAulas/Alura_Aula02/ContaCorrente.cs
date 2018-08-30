@@ -8,7 +8,7 @@ namespace Alura_Aula02
 {
     class ContaCorrente
     {
-        public string titular;
+        public Cliente titular;
         public int agencia;
         public int numero;
         public double saldo;
