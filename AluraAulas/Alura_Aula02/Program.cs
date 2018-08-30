@@ -10,18 +10,12 @@ namespace Alura_Aula02
     {
         static void Main(string[] args)
         {
-            ContaCorrente conta1 = new ContaCorrente();
-            ContaCorrente conta2 = new ContaCorrente();
+            ContaCorrente contaDaCamila = new ContaCorrente();
+            contaDaCamila.titular = new Cliente();
+            contaDaCamila.titular.nome = "Camila dos Santos";
 
-            conta1.Depositar(100);
+            Console.WriteLine("Nome da conta: " + contaDaCamila.titular.nome);
 
-            Console.WriteLine("Saldo da conta 1:" + conta1.saldo);
-
-
-            conta1.Tranferir(100, conta2);
-
-            Console.WriteLine("Saldo da conta 1:" + conta1.saldo);
-            Console.WriteLine("Saldo da conta 2:" + conta2.saldo);
 
             Console.ReadLine();
         }

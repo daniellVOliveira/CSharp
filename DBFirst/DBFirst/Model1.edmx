@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClienteSet" EntityType="Model1.Cliente" />
+          <EntitySet Name="ProdutoSet" EntityType="Model1.Produto" />
+          <EntitySet Name="VendaSet" EntityType="Model1.Venda" />
+          <EntitySet Name="CategoriaSet" EntityType="Model1.Categoria" />
+          <EntitySet Name="ItemVendaSet" EntityType="Model1.ItemVenda" />
+          <AssociationSet Name="ClienteItemVenda" Association="Model1.ClienteItemVenda">
+            <End Role="Cliente" EntitySet="ClienteSet" />
+            <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+          </AssociationSet>
+          <AssociationSet Name="ItemVendaProduto" Association="Model1.ItemVendaProduto">
+            <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+            <End Role="Produto" EntitySet="ProdutoSet" />
+          </AssociationSet>
+          <AssociationSet Name="CategoriaProduto" Association="Model1.CategoriaProduto">
+            <End Role="Categoria" EntitySet="CategoriaSet" />
+            <End Role="Produto" EntitySet="ProdutoSet" />
+          </AssociationSet>
+          <AssociationSet Name="ItemVendaVenda" Association="Model1.ItemVendaVenda">
+            <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+            <End Role="Venda" EntitySet="VendaSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" />
+          <NavigationProperty Name="ItemVenda" Relationship="Model1.ClienteItemVenda" FromRole="Cliente" ToRole="ItemVenda" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <NavigationProperty Name="ItemVenda" Relationship="Model1.ItemVendaProduto" FromRole="Produto" ToRole="ItemVenda" />
+          <Property Name="ItemVendaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="Model1.CategoriaProduto" FromRole="Produto" ToRole="Categoria" />
+          <Property Name="CategoriaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Venda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ItemVenda" Relationship="Model1.ItemVendaVenda" FromRole="Venda" ToRole="ItemVenda" />
+          <Property Name="ItemVendaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <NavigationProperty Name="Produto" Relationship="Model1.CategoriaProduto" FromRole="Categoria" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="ItemVenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Cliente" Relationship="Model1.ClienteItemVenda" FromRole="ItemVenda" ToRole="Cliente" />
+          <Property Name="ClienteId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Produto" Relationship="Model1.ItemVendaProduto" FromRole="ItemVenda" ToRole="Produto" />
+          <NavigationProperty Name="Venda" Relationship="Model1.ItemVendaVenda" FromRole="ItemVenda" ToRole="Venda" />
+        </EntityType>
+        <Association Name="ClienteItemVenda">
+          <End Type="Model1.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="Model1.ItemVenda" Role="ItemVenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemVenda">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ItemVendaProduto">
+          <End Type="Model1.ItemVenda" Role="ItemVenda" Multiplicity="1" />
+          <End Type="Model1.Produto" Role="Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemVenda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="ItemVendaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoriaProduto">
+          <End Type="Model1.Categoria" Role="Categoria" Multiplicity="1" />
+          <End Type="Model1.Produto" Role="Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="CategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ItemVendaVenda">
+          <End Type="Model1.ItemVenda" Role="ItemVenda" Multiplicity="1" />
+          <End Type="Model1.Venda" Role="Venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemVenda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Venda">
+              <PropertyRef Name="ItemVendaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
